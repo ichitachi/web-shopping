@@ -1,4 +1,4 @@
 package tikuka.olt.org.dto.user;
 
-public class UsersDTO {
+public class UserDTO {
 }

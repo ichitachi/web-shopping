@@ -6,6 +6,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
@@ -64,10 +65,10 @@ public class UserProfile implements Serializable {
     private String countryCode;
 
     @Column(name = "createddate")
-    private Instant createdDate;
+    private Timestamp createdDate;
 
     @Column(name = "modifieddate")
-    private Instant modifiedDate;
+    private Timestamp modifiedDate;
 
     @Column(name = "avatar")
     private String avatar;
@@ -176,19 +177,19 @@ public class UserProfile implements Serializable {
         this.countryCode = countryCode;
     }
 
-    public Instant getCreatedDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Instant createdDate) {
+    public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Instant getModifiedDate() {
+    public Timestamp getModifiedDate() {
         return modifiedDate;
     }
 
-    public void setModifiedDate(Instant modifiedDate) {
+    public void setModifiedDate(Timestamp modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 

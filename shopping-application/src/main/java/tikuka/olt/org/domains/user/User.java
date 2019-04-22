@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.Instant;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Set;
 
@@ -66,10 +66,10 @@ public class User implements Serializable {
     private Integer status;
 
     @Column(name = "createddate")
-    private Instant createdDate;
+    private Timestamp createdDate;
 
     @Column(name = "modifieddate")
-    private Instant modifiedDate;
+    private Timestamp modifiedDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "usergroupid", referencedColumnName = "usergroupid")
@@ -173,19 +173,19 @@ public class User implements Serializable {
         this.status = status;
     }
 
-    public Instant getCreatedDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Instant createdDate) {
+    public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Instant getModifiedDate() {
+    public Timestamp getModifiedDate() {
         return modifiedDate;
     }
 
-    public void setModifiedDate(Instant modifiedDate) {
+    public void setModifiedDate(Timestamp modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 

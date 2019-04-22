@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.time.Instant;
+import java.sql.Timestamp;
 import java.util.Set;
 
 @Entity
@@ -28,10 +28,10 @@ public class Role implements Serializable {
     private String description;
 
     @Column(name = "createddate")
-    private Instant createdDate;
+    private Timestamp createdDate;
 
     @Column(name = "modifieddate")
-    private Instant modifiedDate;
+    private Timestamp modifiedDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "role")
     private Set<RoleACL> roleACLS;
@@ -89,19 +89,19 @@ public class Role implements Serializable {
         this.description = description;
     }
 
-    public Instant getCreatedDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Instant createdDate) {
+    public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Instant getModifiedDate() {
+    public Timestamp getModifiedDate() {
         return modifiedDate;
     }
 
-    public void setModifiedDate(Instant modifiedDate) {
+    public void setModifiedDate(Timestamp modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 }

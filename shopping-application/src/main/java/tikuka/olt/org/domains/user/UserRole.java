@@ -4,6 +4,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.time.Instant;
 
 @Entity
@@ -24,21 +25,21 @@ public class UserRole implements Serializable {
     private User user;
 
     @Column(name = "createddate")
-    private Instant createdDate;
+    private Timestamp createdDate;
 
     @Column(name = "modifieddate")
-    private Instant modifiedDate;
+    private Timestamp modifiedDate;
 
     public UserRole(){};
 
-    public UserRole(Role role, User user, Instant createdDate, Instant modifiedDate) {
+    public UserRole(Role role, User user, Timestamp createdDate, Timestamp modifiedDate) {
         this.role = role;
         this.user = user;
         this.createdDate = createdDate;
         this.modifiedDate = modifiedDate;
     }
 
-    public UserRole(Role role, User user, Instant createdDate) {
+    public UserRole(Role role, User user, Timestamp createdDate) {
         this.role = role;
         this.user = user;
         this.createdDate = createdDate;
@@ -68,19 +69,19 @@ public class UserRole implements Serializable {
         this.user = user;
     }
 
-    public Instant getCreatedDate() {
+    public Timestamp getCreatedDate() {
         return createdDate;
     }
 
-    public void setCreatedDate(Instant createdDate) {
+    public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
 
-    public Instant getModifiedDate() {
+    public Timestamp getModifiedDate() {
         return modifiedDate;
     }
 
-    public void setModifiedDate(Instant modifiedDate) {
+    public void setModifiedDate(Timestamp modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 }

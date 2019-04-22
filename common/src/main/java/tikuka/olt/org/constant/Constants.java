@@ -1,5 +1,7 @@
 package tikuka.olt.org.constant;
 
+import java.net.URI;
+
 public final class Constants {
     // Regex for acceptable logins
     public static final String LOGIN_REGEX = "^[_.@A-Za-z0-9-]*$";
@@ -16,4 +18,6 @@ public final class Constants {
 
     public static final String USER_GROUP_SYSADMIN = "SYS_ADMIN";
     public static final String USER_GROUP_CUSTOMER = "CUSTOMER";
+    public static final String PROBLEM_BASE_URL = "https://www.tikuka.com/problem";
+    public static final URI DEFAULT_TYPE = URI.create(PROBLEM_BASE_URL + "/problem-with-message");
 }
